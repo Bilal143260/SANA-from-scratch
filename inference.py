@@ -1,6 +1,6 @@
 import argparse
 import torch
-from sana_model import SanaMS_1600M_P1_D20, load_pth
+from sana_model import SANAModel_1600M_P1_D20, load_pth
 
 # ---- fixed SANA 1.6B / 1024px settings (from the official config) ----
 TRANSFORMER_CKPT = "SANA1.5_1.6B_1024px.pth"          # local path to the official .pth
