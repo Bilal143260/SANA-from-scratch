@@ -93,7 +93,7 @@ def generate(model, scheduler, cond, cond_mask, null, null_mask,
         t_batch = t.expand(latent_in.shape[0])
 
         # model runs in `dtype`; feed it that, get velocity back in fp32 for a stable step
-        v = model(latent_in.to(dtype), t_batch, emb, mask).float()
+        v = model(latent_in.to(dtype), emb, t_batch, mask).float()
 
         if do_cfg:
             v_uncond, v_text = v.chunk(2, dim=0)
